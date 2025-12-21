@@ -2,3 +2,10 @@
 *.css.map
 *.sass.map
 *.scss.map
+app/
+conf/
+logs/
+node_modules/
+site_resources/
+*.code-workspace
+dest/
