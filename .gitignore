@@ -2,7 +2,14 @@
 *.css.map
 *.sass.map
 *.scss.map
-app/
+app/public/*
+!app/public/wp-content/
+app/public/wp-content/*
+!app/public/wp-content/themes/
+app/public/wp-content/themes/*
+!app/public/wp-content/themes/botanica/
+app/public/wp-content/themes/botanica/*
+!app/public/wp-content/themes/botanica/src/
 conf/
 logs/
 node_modules/
