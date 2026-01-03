@@ -16,3 +16,4 @@ node_modules/
 site_resources/
 *.code-workspace
 dest/
+app/sql/local.sql
