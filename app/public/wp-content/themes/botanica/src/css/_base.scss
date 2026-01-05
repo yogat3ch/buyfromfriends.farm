@@ -1,0 +1,94 @@
+/* SCSS HEX */
+$frosted-blue: #B3E2E4ff;
+$white: #FFFFFFff;
+$light-sea-green: #35A59Eff;
+$burnt-rose: #823B45ff;
+$teal: #258482ff;
+
+/* SCSS RGB */
+$frosted-blue: rgba(179, 226, 228, 1);
+$white: rgba(255, 255, 255, 1);
+$light-sea-green: rgba(53, 165, 158, 1);
+$burnt-rose: rgba(130, 59, 69, 1);
+$teal: rgba(37, 132, 130, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-right: linear-gradient(90deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-bottom: linear-gradient(180deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-left: linear-gradient(270deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-top-right: linear-gradient(45deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-bottom-right: linear-gradient(135deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-top-left: linear-gradient(225deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-bottom-left: linear-gradient(315deg, #B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+$gradient-radial: radial-gradient(#B3E2E4ff, #FFFFFFff, #35A59Eff, #823B45ff, #258482ff);
+
+// Derivations for accessibility/depth
+$text-main: darken($teal, 45%); // Deep charcoal-teal for readability
+$bg-offset: mix($frosted-blue, $white, 20%); // Very subtle tint for cards/sections
+
+// Mapping to your 11 Use Cases
+$heading-color: $teal;
+$body-text: $text-main;
+$bg-color: $white;
+$primary-color: $light-sea-green;
+$secondary-color: $burnt-rose;
+
+$link-default: $light-sea-green;
+$link-hover: $teal;
+
+$btn-text-default: $white;
+$btn-text-hover: $white;
+$btn-bg-default: $light-sea-green;
+$btn-bg-hover: $teal;
+
+%button-default {
+    font-weight: 600;
+    transition: all ease-in-out 0.25s;
+    -webkit-transition: all ease-in-out 0.25s;
+}
+
+%button-default-hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    -webkit-box-shadow: 0 7px 20px rgba(var(--black-color-rgb), 0.02);
+    box-shadow: 0 7px 20px rgba(var(--black-color-rgb), 0.02);
+}
+
+%button {
+    color: $btn-text-default;
+    background-color: $btn-bg-default;
+    @extend %button-default;
+
+    &:hover {
+        color: $btn-text-hover;
+        background-color: $btn-bg-hover;
+        @extend %button-default-hover;
+    }
+}
+
+%button-secondary {
+    background-color: transparent;
+    color: $btn-text-default;
+    border-color: $btn-bg-default;
+    @extend %button-default;
+
+    &:hover {
+        color: $btn-bg-hover;
+        @extend %button-default-hover;
+    }
+}
+
+@mixin redbg($opacity: 1) {
+    background-color: rgb(109, 2, 19, $opacity);
+    color: $white;
+}
+
+@mixin center($font: true) {
+    margin-left: auto;
+    margin-right: auto;
+
+    @if $font {
+        text-align: center;
+    }
+}
