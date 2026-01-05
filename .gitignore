@@ -10,6 +10,7 @@ app/public/wp-content/themes/*
 !app/public/wp-content/themes/botanica/
 app/public/wp-content/themes/botanica/*
 !app/public/wp-content/themes/botanica/src/
+app/public/wp-content/themes/botanica/src/temp
 !app/public/wp-content/themes/botanica/tailwind.config.js
 !app/public/wp-content/themes/botanica/package.json
 !app/public/wp-content/themes/botanica/package-lock.json
