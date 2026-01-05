@@ -16,6 +16,7 @@ The gulpfile needs to:
 3. **Build** - Both steps should be executable as a single gulp task. 
 
 - Make it such that there is a watch task that monitors the @src folder for changes and runs the appropriate gulp tasks.
+- Ensure the order of concatenation uses the compiled output from @tailwind.css first and then the @custom.css output.
 
 ## Gulp dependencies
 - Ensure all gulp dependencies for these tasks are installed and up to date and tracked in the @package.json file.
