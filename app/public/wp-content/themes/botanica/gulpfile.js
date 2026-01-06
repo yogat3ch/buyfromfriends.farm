@@ -34,7 +34,10 @@ function compileScss() {
 // 2. Process Tailwind CSS to temp folder
 function processTailwind() {
   return src(paths.tailwind)
-    .pipe(postcss([tailwindcss(), autoprefixer()]))
+    .pipe(postcss([tailwindcss(), autoprefixer()]).on("error", function(err) {
+      console.error("PostCSS Error:", err.toString());
+      this.emit("end");
+    }))
     .pipe(rename({ suffix: ".temp" }))
     .pipe(dest(paths.temp));
 }
@@ -42,7 +45,7 @@ function processTailwind() {
 // 3. Concatenate custom.css (from SCSS) and tailwind.temp.css
 function concatStyles() {
     // Note: custom.css is produced by compileScss
-    return src([`${paths.temp}/custom.css`, `${paths.temp}/tailwind.temp.css`], { allowEmpty: true })
+    return src([`${paths.temp}/tailwind.temp.css`, `${paths.temp}/custom.css`], { allowEmpty: true })
         .pipe(concat("custom.css"))
         .pipe(dest(paths.temp));
 }
@@ -70,6 +73,9 @@ function processScripts() {
         .pipe(jshint.reporter("default"))
         .pipe(babel({
             presets: ["@babel/env"]
+        }).on("error", function(err) {
+            console.error("Babel Error:", err.toString());
+            this.emit("end");
         }))
         .pipe(concat("custom.js"))
         .pipe(dest(paths.temp));
