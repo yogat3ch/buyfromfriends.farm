@@ -32,3 +32,32 @@
 
     }
 }
+
+// Remove post thumbnail
+.post-thumbnail {
+    display: none;
+}
+
+// Fix spacing between paragraphs and images
+p+div.wp-block-image,
+div.wp-block-image:has(+ p) {
+    margin: .5rem;
+}
+
+// Fix search bar button position
+#_desktop_search>form>div>div.relative.w-full {
+    &>label {
+        top: 40%;
+        left: 2%;
+    }
+
+    &>button {
+        top: -2px;
+
+        &>span.text-search {
+            color: $white;
+            font-size: 0.6rem;
+        }
+    }
+
+}
