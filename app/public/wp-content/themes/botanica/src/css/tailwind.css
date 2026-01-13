@@ -4,27 +4,27 @@
 
 @layer base {
   h1 {
-    @apply text-6xl font-libre font-bold;
+    @apply text-6xl font-libre font-bold my-3;
   }
 
   h2 {
-    @apply text-4xl font-libre font-bold;
+    @apply text-4xl font-libre font-bold my-3;
   }
 
   h3 {
-    @apply text-3xl font-libre font-normal;
+    @apply text-3xl font-libre font-normal my-2;
   }
 
   h4 {
-    @apply text-2xl font-libre font-normal;
+    @apply text-2xl font-libre font-normal my-2;
   }
 
   h5 {
-    @apply text-xl font-libre font-normal;
+    @apply text-xl font-libre font-normal my-1;
   }
 
   h6 {
-    @apply text-lg font-libre font-normal;
+    @apply text-lg font-libre font-normal my-1;
   }
 
   body {
@@ -38,16 +38,15 @@
   /* Navigation / Subheads */
   nav, .nav-item, .subhead {
     @apply font-montserrat font-semibold;
+    & a {
+      @apply no-underline;
+    }
   }
 
   /* Buttons */
   button, .button, .btn {
     @apply font-montserrat font-medium uppercase tracking-[1px];
   }
-}
-
-@layer base {
-
   ul,
   ol {
     list-style: initial;
@@ -55,4 +54,8 @@
     /* You might also want to add default margin/padding back if needed */
     margin-left: 1em;
   }
+  a {
+    @apply underline;
+  }
 }
+

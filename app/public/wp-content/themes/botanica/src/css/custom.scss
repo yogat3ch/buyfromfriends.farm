@@ -3,7 +3,7 @@
 
 #rbb-page-title {
     position: relative;
-
+    margin-bottom: 2rem;
     /* Essential for positioning the pseudo-element */
     /* Keep existing background-image and background-color: black; */
     &::before {
